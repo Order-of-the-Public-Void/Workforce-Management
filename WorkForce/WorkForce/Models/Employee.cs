@@ -13,6 +13,8 @@ namespace WorkForce.Models
 		public string LastName { get; set; }
 		public string FirstName { get; set; }
         public DateTime StartDate { get; set; }
-        public int DeptId { get; set; }
-	}
+        public virtual List<Department> Department { get; set; }
+        //public virtual List<Computer> Computer { get; set; }
+        //public virtual List<Training> Training { get; set; }
+    }
 }

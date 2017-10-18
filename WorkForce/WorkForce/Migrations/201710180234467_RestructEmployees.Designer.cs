@@ -7,13 +7,13 @@ namespace WorkForce.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addEmpStartDate : IMigrationMetadata
+    public sealed partial class RestructEmployees : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addEmpStartDate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RestructEmployees));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710170138237_addEmpStartDate"; }
+            get { return "201710180234467_RestructEmployees"; }
         }
         
         string IMigrationMetadata.Source

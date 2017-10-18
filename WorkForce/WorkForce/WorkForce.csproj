@@ -154,23 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710170108235_employeeTable.cs" />
-    <Compile Include="Migrations\201710170108235_employeeTable.Designer.cs">
-      <DependentUpon>201710170108235_employeeTable.cs</DependentUpon>
-    </Compile>
-
-    <Compile Include="Migrations\201710170138237_addEmpStartDate.cs" />
-    <Compile Include="Migrations\201710170138237_addEmpStartDate.Designer.cs">
-      <DependentUpon>201710170138237_addEmpStartDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710170143184_EmployeeIdRequired.cs" />
-    <Compile Include="Migrations\201710170143184_EmployeeIdRequired.Designer.cs">
-      <DependentUpon>201710170143184_EmployeeIdRequired.cs</DependentUpon>
-
-    <Compile Include="Migrations\201710170204114_departmentTable.cs" />
-    <Compile Include="Migrations\201710170204114_departmentTable.Designer.cs">
-      <DependentUpon>201710170204114_departmentTable.cs</DependentUpon>
-
+    <Compile Include="Migrations\201710180234467_RestructEmployees.cs" />
+    <Compile Include="Migrations\201710180234467_RestructEmployees.Designer.cs">
+      <DependentUpon>201710180234467_RestructEmployees.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -245,19 +231,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710170108235_employeeTable.resx">
-      <DependentUpon>201710170108235_employeeTable.cs</DependentUpon>
-    </EmbeddedResource>
-
-    <EmbeddedResource Include="Migrations\201710170138237_addEmpStartDate.resx">
-      <DependentUpon>201710170138237_addEmpStartDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710170143184_EmployeeIdRequired.resx">
-      <DependentUpon>201710170143184_EmployeeIdRequired.cs</DependentUpon>
-
-    <EmbeddedResource Include="Migrations\201710170204114_departmentTable.resx">
-      <DependentUpon>201710170204114_departmentTable.cs</DependentUpon>
-
+    <EmbeddedResource Include="Migrations\201710180234467_RestructEmployees.resx">
+      <DependentUpon>201710180234467_RestructEmployees.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
