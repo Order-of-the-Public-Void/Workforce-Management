@@ -46,7 +46,7 @@ namespace WorkForce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeId,LastName,FirstName,DeptId")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmployeeId,LastName,FirstName,StartDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace WorkForce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,LastName,FirstName,DeptId")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmployeeId,LastName,FirstName,StartDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
