@@ -154,6 +154,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
     <Compile Include="Migrations\201710180234467_RestructEmployees.cs" />
     <Compile Include="Migrations\201710180234467_RestructEmployees.Designer.cs">
       <DependentUpon>201710180234467_RestructEmployees.cs</DependentUpon>
