@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComputersController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,8 +157,21 @@
     <Compile Include="Migrations\201710170108235_employeeTable.Designer.cs">
       <DependentUpon>201710170108235_employeeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710180142156_PutersUpdate.cs" />
+    <Compile Include="Migrations\201710180142156_PutersUpdate.Designer.cs">
+      <DependentUpon>201710180142156_PutersUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710180147244_puters!.cs" />
+    <Compile Include="Migrations\201710180147244_puters!.Designer.cs">
+      <DependentUpon>201710180147244_puters!.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710180203110_AddMake.cs" />
+    <Compile Include="Migrations\201710180203110_AddMake.Designer.cs">
+      <DependentUpon>201710180203110_AddMake.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
+    <Compile Include="Models\Computers.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -203,6 +217,11 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Computers\Create.cshtml" />
+    <Content Include="Views\Computers\Delete.cshtml" />
+    <Content Include="Views\Computers\Details.cshtml" />
+    <Content Include="Views\Computers\Edit.cshtml" />
+    <Content Include="Views\Computers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -225,6 +244,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710170108235_employeeTable.resx">
       <DependentUpon>201710170108235_employeeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180142156_PutersUpdate.resx">
+      <DependentUpon>201710180142156_PutersUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180147244_puters!.resx">
+      <DependentUpon>201710180147244_puters!.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180203110_AddMake.resx">
+      <DependentUpon>201710180203110_AddMake.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
