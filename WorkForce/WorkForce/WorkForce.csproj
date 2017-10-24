@@ -152,6 +152,7 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrainingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,12 +175,16 @@
     <Compile Include="Migrations\201710200128168_Compooters2.cs" />
     <Compile Include="Migrations\201710200128168_Compooters2.Designer.cs">
       <DependentUpon>201710200128168_Compooters2.cs</DependentUpon>
+    <Compile Include="Migrations\201710200025533_addTrainingTable.cs" />
+    <Compile Include="Migrations\201710200025533_addTrainingTable.Designer.cs">
+      <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Computers.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Training.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +239,11 @@
     <Content Include="Views\Computers\Details.cshtml" />
     <Content Include="Views\Computers\Edit.cshtml" />
     <Content Include="Views\Computers\Index.cshtml" />
+    <Content Include="Views\Trainings\Create.cshtml" />
+    <Content Include="Views\Trainings\Delete.cshtml" />
+    <Content Include="Views\Trainings\Details.cshtml" />
+    <Content Include="Views\Trainings\Edit.cshtml" />
+    <Content Include="Views\Trainings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,6 +278,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710200128168_Compooters2.resx">
       <DependentUpon>201710200128168_Compooters2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710200025533_addTrainingTable.resx">
+      <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

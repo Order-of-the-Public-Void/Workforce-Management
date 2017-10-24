@@ -23,6 +23,7 @@ namespace WorkForce.Models
 
         public System.Data.Entity.DbSet<WorkForce.Models.Department> Departments { get; set; }
 
-        public System.Data.Entity.DbSet<WorkForce.Models.Computers> Computers { get; set; }
+        public System.Data.Entity.DbSet<WorkForce.Models.Training> Trainings { get; set; }
+
     }
 }
