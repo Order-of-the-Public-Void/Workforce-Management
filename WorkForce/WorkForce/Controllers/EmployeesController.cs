@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WorkForce.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace WorkForce.Controllers
 {
@@ -17,7 +18,9 @@ namespace WorkForce.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Employees.ToList());
+            var employees = db.Employees.Include(e => e.Department);
+            //return View(db.Employees.ToList());
+            return View(employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -38,6 +41,7 @@ namespace WorkForce.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            PopulateDepartmentsDropDownList();
             return View();
         }
 
@@ -48,15 +52,35 @@ namespace WorkForce.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EmployeeId,LastName,FirstName,StartDate")] Employee employee)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Employees.Add(employee);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Employees.Add(employee);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
+            catch (RetryLimitExceededException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.)
+                //ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                ModelState.AddModelError("", "Unable to save changes.");
+            }
+            //PopulateDepartmentsDropDownList(Employee.DepartmentId);
             return View(employee);
         }
+
+        
+        //
+        //public List<Department> GetDepartmentList()
+        //{
+        //    using (Departments _context = new Departments())
+        //    {
+        //        return (from d in _context.Departments
+        //                select d).ToList();
+        //    }
+        //}
 
         // GET: Employees/Edit/5
         public ActionResult Edit(int? id)
@@ -70,6 +94,7 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
+            //PopulateDepartmentsDropDownList(employee.DepartmentID);
             return View(employee);
         }
 
@@ -122,6 +147,14 @@ namespace WorkForce.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
+        {
+            var departmentsQuery = from d in db.Departments
+                                   orderby d.DepartmentName
+                                   select d;
+            ViewBag.DepartmentId = new SelectList(departmentsQuery, "DepartmentId", "Name", selectedDepartment);
         }
     }
 }

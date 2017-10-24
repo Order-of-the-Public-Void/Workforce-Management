@@ -34,11 +34,38 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
                 @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        @*
+        <div>
+            @Html.DropDownListFor(d => d.DepartmentId,
+                                    new SelectList(Model.DepartmentList,
+                                    "DepartmentID", "Value"))
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        *@
+
+        @*
+        <div class="form-group">
+            @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList(model => model.Department, (IEnumerable<SelectListItem>)ViewBag.Department)
+                @Html.ValidationMessageFor(model => model.DepartmentId, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        *@
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="DepartmentId">Department</label>
+            <div class="col-md-10">
+                @Html.DropDownList("DepartmentId", String.Empty)
+                @Html.ValidationMessageFor(model => model.DepartmentId)
+            </div>
+        </div>
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
