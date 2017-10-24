@@ -148,7 +148,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ComputersController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -164,24 +163,12 @@
     <Compile Include="Migrations\201710192307386_UpdateDb.Designer.cs">
       <DependentUpon>201710192307386_UpdateDb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710200029095_puters!!!!!.cs" />
-    <Compile Include="Migrations\201710200029095_puters!!!!!.Designer.cs">
-      <DependentUpon>201710200029095_puters!!!!!.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710200118113_Compoooters.cs" />
-    <Compile Include="Migrations\201710200118113_Compoooters.Designer.cs">
-      <DependentUpon>201710200118113_Compoooters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710200128168_Compooters2.cs" />
-    <Compile Include="Migrations\201710200128168_Compooters2.Designer.cs">
-      <DependentUpon>201710200128168_Compooters2.cs</DependentUpon>
     <Compile Include="Migrations\201710200025533_addTrainingTable.cs" />
     <Compile Include="Migrations\201710200025533_addTrainingTable.Designer.cs">
       <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
-    <Compile Include="Models\Computers.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Training.cs" />
@@ -234,11 +221,6 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\Computers\Create.cshtml" />
-    <Content Include="Views\Computers\Delete.cshtml" />
-    <Content Include="Views\Computers\Details.cshtml" />
-    <Content Include="Views\Computers\Edit.cshtml" />
-    <Content Include="Views\Computers\Index.cshtml" />
     <Content Include="Views\Trainings\Create.cshtml" />
     <Content Include="Views\Trainings\Delete.cshtml" />
     <Content Include="Views\Trainings\Details.cshtml" />
@@ -270,14 +252,6 @@
     <EmbeddedResource Include="Migrations\201710192307386_UpdateDb.resx">
       <DependentUpon>201710192307386_UpdateDb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200029095_puters!!!!!.resx">
-      <DependentUpon>201710200029095_puters!!!!!.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200118113_Compoooters.resx">
-      <DependentUpon>201710200118113_Compoooters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200128168_Compooters2.resx">
-      <DependentUpon>201710200128168_Compooters2.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\201710200025533_addTrainingTable.resx">
       <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
     </EmbeddedResource>
