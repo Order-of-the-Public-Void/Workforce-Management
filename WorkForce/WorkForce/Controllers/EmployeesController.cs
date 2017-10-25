@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WorkForce.Models;
 using System.Data.Entity.Infrastructure;
+using WorkForce.ViewModels.Employees;
 
 namespace WorkForce.Controllers
 {
@@ -41,7 +42,8 @@ namespace WorkForce.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
-            PopulateDepartmentsDropDownList();
+            var listDepts = PopulateDepartmentsDropDownList();
+            ViewBag.DepartmentId = listDepts; 
             return View();
         }
 
@@ -50,12 +52,24 @@ namespace WorkForce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeId,LastName,FirstName,StartDate")] Employee employee)
+        public ActionResult Create(CreateNewEmployee newEmployee)
         {
+            var employee = new Employee
+            {
+                FirstName = newEmployee.FirstName,
+                LastName = newEmployee.LastName,
+                StartDate = newEmployee.StartDate,
+                Department = new Department
+                {
+                    DepartmentId = newEmployee.DepartmentId,
+                }
+            };
+
             try
             {
                 if (ModelState.IsValid)
                 {
+
                     db.Employees.Add(employee);
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -67,7 +81,7 @@ namespace WorkForce.Controllers
                 //ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
                 ModelState.AddModelError("", "Unable to save changes.");
             }
-            //PopulateDepartmentsDropDownList(Employee.DepartmentId);
+            PopulateDepartmentsDropDownList(employee.Department);
             return View(employee);
         }
 
@@ -149,12 +163,12 @@ namespace WorkForce.Controllers
             base.Dispose(disposing);
         }
 
-        private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
+        private SelectList PopulateDepartmentsDropDownList(object selectedDepartment = null)
         {
             var departmentsQuery = from d in db.Departments
                                    orderby d.DepartmentName
                                    select d;
-            ViewBag.DepartmentId = new SelectList(departmentsQuery, "DepartmentId", "Name", selectedDepartment);
+            return new SelectList(departmentsQuery, "DepartmentId", "DepartmentName", selectedDepartment);
         }
     }
 }

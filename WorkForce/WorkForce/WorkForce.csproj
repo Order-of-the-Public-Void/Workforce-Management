@@ -166,6 +166,14 @@
     <Compile Include="Migrations\201710240049571_LatashaChanges.Designer.cs">
       <DependentUpon>201710240049571_LatashaChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710242345205_removeDept.cs" />
+    <Compile Include="Migrations\201710242345205_removeDept.Designer.cs">
+      <DependentUpon>201710242345205_removeDept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710242346455_addDept.cs" />
+    <Compile Include="Migrations\201710242346455_addDept.Designer.cs">
+      <DependentUpon>201710242346455_addDept.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Department.cs" />
@@ -250,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710240049571_LatashaChanges.resx">
       <DependentUpon>201710240049571_LatashaChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242345205_removeDept.resx">
+      <DependentUpon>201710242345205_removeDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242346455_addDept.resx">
+      <DependentUpon>201710242346455_addDept.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

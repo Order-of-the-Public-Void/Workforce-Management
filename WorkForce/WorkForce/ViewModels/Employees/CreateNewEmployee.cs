@@ -10,7 +10,7 @@ namespace WorkForce.ViewModels.Employees
     {
         [Required]
         [Display(Name = "Last Name")]
-        public int LastName { get; set; }
+        public string LastName { get; set; }
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -18,6 +18,7 @@ namespace WorkForce.ViewModels.Employees
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
-         
+        [Required]
+        public int DepartmentId { get; set; }
     }
 }
