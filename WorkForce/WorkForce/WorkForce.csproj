@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComputersController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -155,20 +156,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710180234467_RestructEmployees.cs" />
-    <Compile Include="Migrations\201710180234467_RestructEmployees.Designer.cs">
-      <DependentUpon>201710180234467_RestructEmployees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710192307386_UpdateDb.cs" />
-    <Compile Include="Migrations\201710192307386_UpdateDb.Designer.cs">
-      <DependentUpon>201710192307386_UpdateDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710200025533_addTrainingTable.cs" />
-    <Compile Include="Migrations\201710200025533_addTrainingTable.Designer.cs">
-      <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
+    <Compile Include="Migrations\201710250102232_computer3--2.cs" />
+    <Compile Include="Migrations\201710250102232_computer3--2.Designer.cs">
+      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
+    <Compile Include="Models\Computers.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Training.cs" />
@@ -226,6 +220,11 @@
     <Content Include="Views\Trainings\Details.cshtml" />
     <Content Include="Views\Trainings\Edit.cshtml" />
     <Content Include="Views\Trainings\Index.cshtml" />
+    <Content Include="Views\Computers\Create.cshtml" />
+    <Content Include="Views\Computers\Delete.cshtml" />
+    <Content Include="Views\Computers\Details.cshtml" />
+    <Content Include="Views\Computers\Edit.cshtml" />
+    <Content Include="Views\Computers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -246,14 +245,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710180234467_RestructEmployees.resx">
-      <DependentUpon>201710180234467_RestructEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710192307386_UpdateDb.resx">
-      <DependentUpon>201710192307386_UpdateDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200025533_addTrainingTable.resx">
-      <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710250102232_computer3--2.resx">
+      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
