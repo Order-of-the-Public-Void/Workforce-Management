@@ -85,17 +85,6 @@ namespace WorkForce.Controllers
             return View(employee);
         }
 
-        
-        //
-        //public List<Department> GetDepartmentList()
-        //{
-        //    using (Departments _context = new Departments())
-        //    {
-        //        return (from d in _context.Departments
-        //                select d).ToList();
-        //    }
-        //}
-
         // GET: Employees/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -108,7 +97,7 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
-            //PopulateDepartmentsDropDownList(employee.DepartmentID);
+            PopulateDepartmentsDropDownList(employee.Department);
             return View(employee);
         }
 
