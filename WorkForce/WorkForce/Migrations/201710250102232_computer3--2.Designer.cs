@@ -7,13 +7,13 @@ namespace WorkForce.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RestructEmployees : IMigrationMetadata
+    public sealed partial class computer32 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RestructEmployees));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(computer32));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710180234467_RestructEmployees"; }
+            get { return "201710250102232_computer3--2"; }
         }
         
         string IMigrationMetadata.Source
