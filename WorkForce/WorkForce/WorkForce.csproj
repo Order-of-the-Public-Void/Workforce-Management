@@ -167,6 +167,14 @@
     <Compile Include="Migrations\201710200025533_addTrainingTable.Designer.cs">
       <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710240100285_savechanges.cs" />
+    <Compile Include="Migrations\201710240100285_savechanges.Designer.cs">
+      <DependentUpon>201710240100285_savechanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710250105501_changedTrainingModel.cs" />
+    <Compile Include="Migrations\201710250105501_changedTrainingModel.Designer.cs">
+      <DependentUpon>201710250105501_changedTrainingModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Department.cs" />
@@ -254,6 +262,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710200025533_addTrainingTable.resx">
       <DependentUpon>201710200025533_addTrainingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710240100285_savechanges.resx">
+      <DependentUpon>201710240100285_savechanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710250105501_changedTrainingModel.resx">
+      <DependentUpon>201710250105501_changedTrainingModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

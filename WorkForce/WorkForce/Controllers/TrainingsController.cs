@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WorkForce.Models;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Infrastructure;
 
 namespace WorkForce.Controllers
 {
@@ -17,7 +19,7 @@ namespace WorkForce.Controllers
         // GET: Trainings
         public ActionResult Index()
         {
-            return View(db.Trainings.ToList());
+            return View(db.Trainings);
         }
 
         // GET: Trainings/Details/5
@@ -38,7 +40,7 @@ namespace WorkForce.Controllers
         // GET: Trainings/Create
         public ActionResult Create()
         {
-            return View();
+              return View();
         }
 
         // POST: Trainings/Create
@@ -54,8 +56,7 @@ namespace WorkForce.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(training);
+             return View(training);
         }
 
         // GET: Trainings/Edit/5
@@ -70,7 +71,7 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
-            return View(training);
+              return View(training);
         }
 
         // POST: Trainings/Edit/5
@@ -86,7 +87,7 @@ namespace WorkForce.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(training);
+             return View(training);
         }
 
         // GET: Trainings/Delete/5
@@ -123,5 +124,6 @@ namespace WorkForce.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+
+     }
 }

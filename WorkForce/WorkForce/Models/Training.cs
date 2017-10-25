@@ -13,6 +13,6 @@ namespace WorkForce.Models
         public DateTime StartDay { get; set; }
         public DateTime EndDay { get; set; }
         public int MaxAttendees { get; set; }
-        public virtual List<Employee> EmployeeId { get; set; }
+        public virtual List<Employee> Employees{ get; set; }
     }
-}
+  }
