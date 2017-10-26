@@ -20,8 +20,8 @@ namespace WorkForce.Controllers
         public ActionResult Index()
         {
             var employees = db.Employees.Include(e => e.Department);
-            //return View(db.Employees.ToList());
-            return View(employees.ToList());
+            return View(db.Employees.ToList());
+            //return View(employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -59,10 +59,7 @@ namespace WorkForce.Controllers
                 FirstName = newEmployee.FirstName,
                 LastName = newEmployee.LastName,
                 StartDate = newEmployee.StartDate,
-                Department = new Department
-                {
-                    DepartmentId = newEmployee.DepartmentId,
-                }
+                Department = db.Departments.Find(newEmployee.DepartmentId)
             };
 
             try
