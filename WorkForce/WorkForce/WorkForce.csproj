@@ -168,6 +168,10 @@
     <Compile Include="Migrations\201710250105501_changedTrainingModel.Designer.cs">
       <DependentUpon>201710250105501_changedTrainingModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710262236435_Help.cs" />
+    <Compile Include="Migrations\201710262236435_Help.Designer.cs">
+      <DependentUpon>201710262236435_Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Computers.cs" />
@@ -263,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710250105501_changedTrainingModel.resx">
       <DependentUpon>201710250105501_changedTrainingModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710262236435_Help.resx">
+      <DependentUpon>201710262236435_Help.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
