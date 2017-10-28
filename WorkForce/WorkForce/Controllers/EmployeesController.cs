@@ -20,7 +20,7 @@ namespace WorkForce.Controllers
         public ActionResult Index()
         {
 
-            var employees = db.Employees.Include(e => e.Department);
+            var employees = db.Employees.Include(e => e.Department.DepartmentName);
 
             return View(db.Employees.ToList());
             //return View(employees.ToList());
