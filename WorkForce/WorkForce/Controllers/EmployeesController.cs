@@ -32,6 +32,7 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
+            PopulateTrainingList();
             return View(employee);
         }
 
@@ -70,6 +71,7 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
+            PopulateTrainingList();
             return View(employee);
         }
 
@@ -122,6 +124,14 @@ namespace WorkForce.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        private void PopulateTrainingList(object selectedTraining = null)
+        {
+            var trainingQuery = from d in db.Trainings
+                                   orderby d.Name
+                                   select d;
+            var items = new SelectList(trainingQuery, "TrainingId", "Name", selectedTraining);
+            ViewBag.Training = items;
         }
     }
 }
