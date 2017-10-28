@@ -156,13 +156,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710250102232_computer3--2.cs" />
-    <Compile Include="Migrations\201710250102232_computer3--2.Designer.cs">
-      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201710240100285_savechanges.cs" />
     <Compile Include="Migrations\201710240100285_savechanges.Designer.cs">
       <DependentUpon>201710240100285_savechanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710250102232_computer3--2.cs" />
+    <Compile Include="Migrations\201710250102232_computer3--2.Designer.cs">
+      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710250105501_changedTrainingModel.cs" />
     <Compile Include="Migrations\201710250105501_changedTrainingModel.Designer.cs">
@@ -192,6 +192,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Migrations\201710250102232_computer3--2.resx~HEAD" />
+    <Content Include="Migrations\201710250102232_computer3--2.resx~Sprint1" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -219,16 +221,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Departments\Create.cshtml" />
-    <Content Include="Views\Departments\Delete.cshtml" />
-    <Content Include="Views\Departments\Details.cshtml" />
-    <Content Include="Views\Departments\Edit.cshtml" />
-    <Content Include="Views\Departments\Index.cshtml" />
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
     <Content Include="Views\Trainings\Create.cshtml" />
     <Content Include="Views\Trainings\Delete.cshtml" />
     <Content Include="Views\Trainings\Details.cshtml" />
@@ -242,6 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\Employees\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -259,11 +262,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710250102232_computer3--2.resx">
-      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710240100285_savechanges.resx">
       <DependentUpon>201710240100285_savechanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710250102232_computer3--2.resx">
+      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710250105501_changedTrainingModel.resx">
       <DependentUpon>201710250105501_changedTrainingModel.cs</DependentUpon>
