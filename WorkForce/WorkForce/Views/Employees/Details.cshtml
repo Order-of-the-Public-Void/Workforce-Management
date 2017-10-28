@@ -33,13 +33,48 @@
         <dd>
             @Html.DisplayFor(model => model.StartDate)
         </dd>
-		<dt>
+		@*<dt>
 			@Html.DisplayNameFor(model => model.Training)
 		</dt>
 		<dd>
 			@Html.DropDownListFor(model => model.Training, (IEnumerable<SelectListItem>)ViewBag.Training)
-		</dd>
+		</dd>*@
     </dl>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					Assigned Courses
+				</th>
+				<th>
+					Course Title
+				</th>
+				<th>
+					Start Day
+				</th>
+				<th>
+					End Day
+				</th>
+			</tr>
+		</thead>
+		@foreach (var item in Model.Training)
+		{
+			<tr>
+				<td>
+					@item.TrainingId
+				</td>
+				<td>
+					@item.Name
+				</td>
+				<td>
+					@item.StartDay
+				</td>
+				<td>
+					@item.EndDay
+				</td>
+			</tr>
+		}
+	</table>
 </div>
 
 
