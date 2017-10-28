@@ -95,11 +95,8 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
-<<<<<<< HEAD
             PopulateTrainingList();
-=======
             PopulateDepartmentsDropDownList(employee.Department);
->>>>>>> Sprint1
             return View(employee);
         }
 
@@ -153,15 +150,14 @@ namespace WorkForce.Controllers
             }
             base.Dispose(disposing);
         }
-<<<<<<< HEAD
         private void PopulateTrainingList(object selectedTraining = null)
         {
             var trainingQuery = from d in db.Trainings
-                                   orderby d.Name
-                                   select d;
+                                orderby d.Name
+                                select d;
             var items = new SelectList(trainingQuery, "TrainingId", "Name", selectedTraining);
             ViewBag.Training = items;
-=======
+        }
 
         private SelectList PopulateDepartmentsDropDownList(object selectedDepartment = null)
         {
@@ -169,7 +165,6 @@ namespace WorkForce.Controllers
                                    orderby d.DepartmentName
                                    select d;
             return new SelectList(departmentsQuery, "DepartmentId", "DepartmentName", selectedDepartment);
->>>>>>> Sprint1
         }
     }
 }
