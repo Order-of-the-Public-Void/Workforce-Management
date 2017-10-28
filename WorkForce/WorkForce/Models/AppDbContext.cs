@@ -15,12 +15,16 @@ namespace WorkForce.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public AppDbContext() : base("name=bangazon")
+        public AppDbContext() : base("name=Bangazon")
         {
         }
 
 		public System.Data.Entity.DbSet<WorkForce.Models.Employee> Employees { get; set; }
 
         public System.Data.Entity.DbSet<WorkForce.Models.Department> Departments { get; set; }
+
+        public System.Data.Entity.DbSet<WorkForce.Models.Training> Trainings { get; set; }
+
+        public System.Data.Entity.DbSet<WorkForce.Models.Computers> Computers { get; set; }
     }
 }

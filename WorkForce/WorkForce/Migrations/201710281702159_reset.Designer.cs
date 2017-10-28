@@ -7,13 +7,13 @@ namespace WorkForce.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class RestructEmployees : IMigrationMetadata
+    public sealed partial class reset : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RestructEmployees));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(reset));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710180234467_RestructEmployees"; }
+            get { return "201710281702159_reset"; }
         }
         
         string IMigrationMetadata.Source
