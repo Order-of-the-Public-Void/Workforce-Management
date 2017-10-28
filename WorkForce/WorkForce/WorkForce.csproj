@@ -156,21 +156,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710240100285_savechanges.cs" />
-    <Compile Include="Migrations\201710240100285_savechanges.Designer.cs">
-      <DependentUpon>201710240100285_savechanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710250102232_computer3--2.cs" />
-    <Compile Include="Migrations\201710250102232_computer3--2.Designer.cs">
-      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710250105501_changedTrainingModel.cs" />
-    <Compile Include="Migrations\201710250105501_changedTrainingModel.Designer.cs">
-      <DependentUpon>201710250105501_changedTrainingModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710270015455_updating.cs" />
-    <Compile Include="Migrations\201710270015455_updating.Designer.cs">
-      <DependentUpon>201710270015455_updating.cs</DependentUpon>
+    <Compile Include="Migrations\201710281702159_reset.cs" />
+    <Compile Include="Migrations\201710281702159_reset.Designer.cs">
+      <DependentUpon>201710281702159_reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -179,6 +167,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Training.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Employees\CreateNewEmployee.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -192,8 +181,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Migrations\201710250102232_computer3--2.resx~HEAD" />
-    <Content Include="Migrations\201710250102232_computer3--2.resx~Sprint1" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -244,7 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\Employees\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -262,17 +248,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710240100285_savechanges.resx">
-      <DependentUpon>201710240100285_savechanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710250102232_computer3--2.resx">
-      <DependentUpon>201710250102232_computer3--2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710250105501_changedTrainingModel.resx">
-      <DependentUpon>201710250105501_changedTrainingModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710270015455_updating.resx">
-      <DependentUpon>201710270015455_updating.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710281702159_reset.resx">
+      <DependentUpon>201710281702159_reset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
