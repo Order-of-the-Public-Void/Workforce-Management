@@ -17,6 +17,7 @@ namespace WorkForce.Controllers
         // GET: Employees
         public ActionResult Index()
         {
+            ViewBag.Departments = new AppDbContext().Departments.ToList().Select(m =>new SelectListItem { Text = m.DepartmentName, Value = m.DepartmentId.ToString() });
             return View(db.Employees.ToList());
         }
 
