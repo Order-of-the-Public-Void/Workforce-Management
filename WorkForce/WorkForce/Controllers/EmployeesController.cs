@@ -20,10 +20,10 @@ namespace WorkForce.Controllers
         public ActionResult Index()
         {
 
-            var employees = db.Employees.Include(e => e.Department.DepartmentName);
+            var employees = db.Employees.Include(e => e.Department);
+            //return View(db.Employees.ToList());
+            return View(employees.ToList());
 
-            return View(db.Employees.ToList());
-            //return View(employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -38,6 +38,7 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
+            PopulateTrainingList();
             return View(employee);
         }
 
@@ -96,6 +97,7 @@ namespace WorkForce.Controllers
             {
                 return HttpNotFound();
             }
+            PopulateTrainingList();
             PopulateDepartmentsDropDownList(employee.Department);
             return View(employee);
         }
@@ -149,6 +151,14 @@ namespace WorkForce.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        private void PopulateTrainingList(object selectedTraining = null)
+        {
+            var trainingQuery = from d in db.Trainings
+                                orderby d.Name
+                                select d;
+            var items = new SelectList(trainingQuery, "TrainingId", "Name", selectedTraining);
+            ViewBag.Training = items;
         }
 
         private SelectList PopulateDepartmentsDropDownList(object selectedDepartment = null)

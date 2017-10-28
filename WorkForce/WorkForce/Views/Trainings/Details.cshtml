@@ -52,6 +52,38 @@
 
     </dl>
 </div>
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					Id
+				</th>
+				<th>
+					First Name
+				</th>
+				<th>
+					Last Name
+				</th>
+			</tr>
+		</thead>
+		@foreach (var item in Model.Employees)
+		{
+			<tr>
+				<td>
+					@item.EmployeeId
+				</td>
+				<td>
+					@item.FirstName
+				</td>
+				<td>
+					@item.LastName
+				</td>
+			</tr>
+		}
+	</table>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TrainingId }) |
     @Html.ActionLink("Back to List", "Index")
