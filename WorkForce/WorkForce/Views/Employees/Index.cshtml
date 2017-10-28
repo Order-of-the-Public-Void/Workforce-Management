@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Department, (IEnumerable<SelectListItem>)ViewBag.Departments)
+            @Html.DisplayFor(modelItem => item.Department, (IEnumerable<SelectListItem>)ViewBag.Departments)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeId }) |
