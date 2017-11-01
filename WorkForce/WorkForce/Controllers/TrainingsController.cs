@@ -111,8 +111,18 @@ namespace WorkForce.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Training training = db.Trainings.Find(id);
-            db.Trainings.Remove(training);
-            db.SaveChanges();
+            if (training.StartDay > DateTime.Now)
+            {
+                db.Trainings.Remove(training);
+                db.SaveChanges();
+            }
+            else
+            {
+                //return new JavaScriptResult() { Script = "alert('This training program cannot be deleted" +
+                //                                               " because it has already taken place');" };
+                ViewBag.Error = "This training program cannot be deleted because it has already taken place";
+                return View("Details", training);
+            }
             return RedirectToAction("Index");
         }
 
