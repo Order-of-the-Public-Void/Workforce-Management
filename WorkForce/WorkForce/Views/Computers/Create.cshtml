@@ -14,6 +14,8 @@
     <div class="form-horizontal">
         <h4>Computers</h4>
         <hr />
+
+        @*
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -22,6 +24,7 @@
                 @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
             </div>
         </div>
+        *@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Manufacturer, htmlAttributes: new { @class = "control-label col-md-2" })
