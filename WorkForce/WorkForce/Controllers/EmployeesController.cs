@@ -19,9 +19,11 @@ namespace WorkForce.Controllers
         // GET: Employees
         public ActionResult Index()
         {
+
             var employees = db.Employees.Include(e => e.Department);
             //return View(db.Employees.ToList());
             return View(employees.ToList());
+
         }
 
         // GET: Employees/Details/5
