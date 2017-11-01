@@ -18,6 +18,13 @@
             @Html.DisplayFor(model => model.DepartmentName)
         </dd>
 
+        <dd>
+           @foreach(var item in Model.Employees) 
+           {
+               <p>@item.FirstName @item.LastName</p>
+           }
+        </dd>
+
     </dl>
 </div>
 <p>
