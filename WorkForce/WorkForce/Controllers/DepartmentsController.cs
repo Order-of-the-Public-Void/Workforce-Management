@@ -17,7 +17,8 @@ namespace WorkForce.Controllers
         // GET: Departments
         public ActionResult Index()
         {
-            return View(db.Departments.ToList());
+            var department = db.Departments;
+            return View(department.ToList());
         }
 
         // GET: Departments/Details/5
