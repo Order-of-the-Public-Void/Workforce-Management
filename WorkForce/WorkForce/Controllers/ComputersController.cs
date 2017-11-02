@@ -110,8 +110,18 @@ namespace WorkForce.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Computers computers = db.Computers.Find(id);
-            db.Computers.Remove(computers);
-            db.SaveChanges();
+
+            if (computers.EmployeeId == 0)
+            {
+                db.Computers.Remove(computers);
+                db.SaveChanges();
+            }
+            else
+            {
+                ViewBag.Error = "This computer cannot be deleted because it has been assigned to an employee";
+                return View("Details", computers);
+            }
+            
             return RedirectToAction("Index");
         }
 

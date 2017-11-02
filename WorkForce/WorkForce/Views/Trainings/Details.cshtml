@@ -7,8 +7,15 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Training</h4>
+    <h4 id="delTrainingError">Training</h4>
     <hr />
+    @if (ViewBag.Error != null)
+    {
+        <div class="has-error">
+            @ViewBag.Error
+        </div>
+    }
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -68,7 +75,7 @@
 			</tr>
 		</thead>
 		@foreach (var item in Model.Employees)
-		{
+        {
 			<tr>
 				<td>
 					@item.EmployeeId
@@ -80,11 +87,21 @@
 					@item.LastName
 				</td>
 			</tr>
-		}
+        }
 	</table>
 </div>
 
+@*
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TrainingId }) |
+
+    @{var startDay = new { start = Model.StartDay };
+        if (startDay > DateTime.Now)
+        {
+            Html.ActionLink("Delete", "Delete", new { id = Model.TrainingId })
+        }
+      }
+
     @Html.ActionLink("Back to List", "Index")
 </p>
+*@
