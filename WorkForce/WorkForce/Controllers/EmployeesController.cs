@@ -20,6 +20,7 @@ namespace WorkForce.Controllers
         public ActionResult Index()
         {
             var employees = db.Employees.Include(e => e.Department);
+            var training = db.Employees.Include(t => t.Training);
             return View(db.Employees.ToList());
             //return View(employees.ToList());
         }
@@ -165,6 +166,16 @@ namespace WorkForce.Controllers
                                    orderby d.DepartmentName
                                    select d;
             return new SelectList(departmentsQuery, "DepartmentId", "DepartmentName", selectedDepartment);
+        }
+
+        //// GET: AddTraining
+        public ActionResult AddTraining(int EmployeeId, int TrainingId)
+        {
+            var db = new AppDbContext();
+
+            db.Trainings.Find(TrainingId).Employees.Add(db.Employees.Find(EmployeeId));
+            db.SaveChanges();
+            return View();
         }
     }
 }
