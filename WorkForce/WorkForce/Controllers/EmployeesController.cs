@@ -21,9 +21,9 @@ namespace WorkForce.Controllers
         {
 
             var employees = db.Employees.Include(e => e.Department);
-            //return View(db.Employees.ToList());
-            return View(employees.ToList());
+            var training = db.Employees.Include(t => t.Training);
 
+            return View(employees.ToList());
         }
 
         // GET: Employees/Details/5
@@ -94,6 +94,7 @@ namespace WorkForce.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
@@ -101,7 +102,17 @@ namespace WorkForce.Controllers
             }
             PopulateTrainingList();
             PopulateDepartmentsDropDownList(employee.Department);
-            return View(employee);
+
+            var details = new EditEmployee
+            {
+                EmployeeId = employee.EmployeeId,
+                LastName = employee.LastName,
+                FirstName = employee.FirstName,
+                DepartmentId = employee.Department.DepartmentId,
+                Training = employee.Training,
+                //ComputerId = employee.
+            };
+            return View(details);
         }
 
         // POST: Employees/Edit/5
@@ -109,15 +120,25 @@ namespace WorkForce.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,LastName,FirstName,StartDate")] Employee employee)
+        public ActionResult Edit(EditEmployee employee)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employee).State = EntityState.Modified;
+                var emp = db.Employees.Find(employee.EmployeeId);
+                emp.EmployeeId = employee.EmployeeId;
+                emp.FirstName = employee.FirstName;
+                emp.LastName = employee.LastName;
+                emp.Department = db.Departments.Find(employee.DepartmentId);
+
+                if (employee.NewTrainingId > 0)
+                {
+                    db.Trainings.Find(employee.NewTrainingId).Employees.Add(emp);
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(employee);
+            return RedirectToAction("Edit",new {id = employee.EmployeeId });
         }
 
         // GET: Employees/Delete/5
