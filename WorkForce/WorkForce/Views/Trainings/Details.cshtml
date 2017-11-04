@@ -91,17 +91,8 @@
 	</table>
 </div>
 
-@*
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TrainingId }) |
-
-    @{var startDay = new { start = Model.StartDay };
-        if (startDay > DateTime.Now)
-        {
-            Html.ActionLink("Delete", "Delete", new { id = Model.TrainingId })
-        }
-      }
-
     @Html.ActionLink("Back to List", "Index")
 </p>
-*@
