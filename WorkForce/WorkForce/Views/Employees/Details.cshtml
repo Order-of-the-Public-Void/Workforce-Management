@@ -5,40 +5,37 @@
 }
 
 <h2>Details</h2>
-
+@{var fullName = Model.FirstName + " " + Model.LastName;}
 <div>
     <h4>Employee</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            Name
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LastName)
+            @fullName
         </dd>
+
 
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.Department.DepartmentName)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-		@*<dt>
-			@Html.DisplayNameFor(model => model.Training)
+		<dt>
+            Assigned Computer
 		</dt>
 		<dd>
-			@Html.DropDownListFor(model => model.Training, (IEnumerable<SelectListItem>)ViewBag.Training)
-		</dd>*@
+            @if (ViewBag.Computer != null)
+            {
+                var myComputer = ViewBag.Computer.ComputerId + " " + ViewBag.Computer.Manufacturer + " " + ViewBag.Computer.Make;
+                @myComputer;
+            }
+        </dd>
     </dl>
 	<table class="table">
 		<thead>
