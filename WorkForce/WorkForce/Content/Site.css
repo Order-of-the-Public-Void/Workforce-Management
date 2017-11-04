@@ -1,12 +1,62 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
+    padding-top: 10px;
 }
+
+.navbar {
+    background-color: transparent;
+    border: none !important;
+}
+
+    .navbar li {
+        color: navy;
+        text-transform: uppercase;
+    }
+
+a {
+    color: navy !important;
+}
+
+.lead {
+    color: white !important;
+    background-color: navy;
+}
+
+.nav-list li a:hover {
+    outline: 2px solid navy;
+    color: navy !important;
+}
+
+.banner {
+    height: 700px;
+    background-color: transparent;
+    background: url(https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/04/12/104400665-2494_037D.1910x1000.jpg?v=1492020041) no-repeat;
+    background-size: cover;
+}
+
+    .banner h1 {
+        background-color: rgba(38, 38, 114, 0.78);
+        text-align: center;
+        color: white;
+        width: auto;
+        border: 2px solid white;
+        padding: 15px;
+    }
+
+    .banner p {
+        text-align: center;
+    }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+
+}
+
+.cool-background {
+    background: url(https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/04/12/104400665-2494_037D.1910x1000.jpg?v=1492020041) no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
