@@ -34,10 +34,12 @@ namespace WorkForce.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Employee employee = db.Employees.Find(id);
+            
             if (employee == null)
             {
                 return HttpNotFound();
             }
+            FindComputer(employee.EmployeeId);
             PopulateTrainingList();
             return View(employee);
         }
@@ -188,6 +190,21 @@ namespace WorkForce.Controllers
                                    orderby d.DepartmentName
                                    select d;
             return new SelectList(departmentsQuery, "DepartmentId", "DepartmentName", selectedDepartment);
+        }
+        private void FindComputer(int id)
+        {
+            //List<Computers> myComputer = new List<Computers>();
+            var allComputers = db.Computers.ToList();
+            
+            foreach (var item in allComputers)
+            {
+                if (item.EmployeeId == id)
+                {
+                    ViewBag.Computer = item;
+                }
+               
+            }
+            //ViewBag.Computer = myComputer;
         }
     }
 }

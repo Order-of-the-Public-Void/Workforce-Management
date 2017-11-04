@@ -19,7 +19,8 @@ namespace WorkForce.Controllers
         // GET: Trainings
         public ActionResult Index()
         {
-            return View(db.Trainings);
+            var futurePrograms = db.Trainings.Where(s => s.StartDay > DateTime.Now);
+            return View(futurePrograms);
         }
 
         // GET: Trainings/Details/5
