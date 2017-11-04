@@ -12,7 +12,7 @@ namespace WorkForce.Models
 		public string FirstName { get; set; }
         public DateTime StartDate { get; set; }
         public virtual Department Department { get; set; }
-        public virtual Computers Computer { get; set; }
+        //public virtual Computers Computer { get; set; }
         public virtual List<Training> Training { get; set; }
     }
 }
