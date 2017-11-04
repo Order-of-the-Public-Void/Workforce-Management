@@ -130,7 +130,7 @@ namespace WorkForce.Controllers
                 emp.FirstName = employee.FirstName;
                 emp.LastName = employee.LastName;
                 emp.Department = db.Departments.Find(employee.DepartmentId);
-                emp.ComputerId = db.Computers.Find(employee.ComputerId);
+                emp.Computer = db.Computers.Find(employee.ComputerId);
 
                 if (employee.NewTrainingId > 0)
                 {
