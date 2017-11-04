@@ -102,6 +102,7 @@ namespace WorkForce.Controllers
             }
             PopulateTrainingList();
             PopulateDepartmentsDropDownList(employee.Department);
+            FindComputer(employee.EmployeeId);
 
             var details = new EditEmployee
             {
@@ -110,7 +111,7 @@ namespace WorkForce.Controllers
                 FirstName = employee.FirstName,
                 DepartmentId = employee.Department.DepartmentId,
                 Training = employee.Training,
-                //ComputerId = employee.
+                ComputerId = employee.Computer.ComputerId
             };
             return View(details);
         }
@@ -129,6 +130,7 @@ namespace WorkForce.Controllers
                 emp.FirstName = employee.FirstName;
                 emp.LastName = employee.LastName;
                 emp.Department = db.Departments.Find(employee.DepartmentId);
+                emp.ComputerId = db.Computers.Find(employee.ComputerId);
 
                 if (employee.NewTrainingId > 0)
                 {
